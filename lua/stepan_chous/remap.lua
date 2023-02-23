@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>er", vim.cmd.TroubleToggle)
 
 vim.keymap.set("n", "x", '"_x')
 

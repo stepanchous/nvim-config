@@ -1,6 +1,6 @@
-local lsp = require('lsp-zero')
+local lsp = require("lsp-zero")
 
-lsp.preset('recommended')
+lsp.preset("recommended")
 lsp.ensure_installed({
 	"clangd",
 	"pyright",
@@ -8,47 +8,40 @@ lsp.ensure_installed({
 })
 
 require("luasnip/loaders/from_vscode").lazy_load()
-local lspkind = require('lspkind')
-local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local lspkind = require("lspkind")
+local cmp = require("cmp")
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 vim.opt.completeopt = "menu,menuone,noselect"
 
 cmp.setup({
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  mapping = cmp.mapping.preset.insert({
-    ["<C-k>"] = cmp.mapping.select_prev_item(cmp_select), -- previous suggestion
-    ["<C-j>"] = cmp.mapping.select_next_item(cmp_select), -- next suggestion
-    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-    ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-    ["<CR>"] = cmp.mapping.confirm({ select = false }),
-  }),
-  -- sources for autocompletion
-  sources = cmp.config.sources({
-    { name = "nvim_lsp" }, -- lsp
-    { name = "luasnip" }, -- snippets
-    { name = "buffer" }, -- text within current buffer
-    { name = "path" }, -- file system paths
-  }),
-  -- configure lspkind for vs-code like icons
-  formatting = {
-    format = lspkind.cmp_format({
-      maxwidth = 50,
-      ellipsis_char = "...",
-      before = function(entry, vim_item)
-          return vim
-      end
-    }),
-  },
+	snippet = {
+		expand = function(args)
+			luasnip.lsp_expand(args.body)
+		end,
+	},
+	mapping = cmp.mapping.preset.insert({
+		["<C-k>"] = cmp.mapping.select_prev_item(cmp_select), -- previous suggestion
+		["<C-j>"] = cmp.mapping.select_next_item(cmp_select), -- next suggestion
+		["<C-b>"] = cmp.mapping.scroll_docs(-4),
+		["<C-f>"] = cmp.mapping.scroll_docs(4),
+		["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
+		["<C-e>"] = cmp.mapping.abort(), -- close completion window
+		["<CR>"] = cmp.mapping.confirm({ select = false }),
+	}),
+	-- sources for autocompletion
+	sources = cmp.config.sources({
+		{ name = "nvim_lsp" }, -- lsp
+		{ name = "luasnip" }, -- snippets
+		{ name = "buffer" }, -- text within current buffer
+		{ name = "path" }, -- file system paths
+	}),
+	format = lspkind.cmp_format({
+		mode = "symbol",
+		maxwidth = 30,
+		ellipsis_char = "...",
+	}),
 })
-
-lsp.set_preferences({ sign_icons = {} })
 
 lsp.setup_nvim_cmp({ mapping = cmp_mappings })
 
@@ -66,5 +59,23 @@ local on_attach = function(client, bufnr)
 	keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 	keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 end
+
+local signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = " " }
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
+
+require("mason-null-ls").setup({
+	-- list of formatters & linters for mason to install
+	ensure_installed = {
+		"prettier", -- ts/js formatter
+		"stylua", -- lua formatter
+		"eslint_d", -- ts/js linter
+		"clang-format",
+	},
+	-- auto-install configured formatters & linters (with null-ls)
+	automatic_installation = true,
+})
 
 lsp.setup()
