@@ -17,11 +17,12 @@ return require("packer").startup(function(use)
 		config = function()
 			require("rose-pine").setup({
 				variant = "moon",
+				disable_italics = true,
 			})
 			vim.cmd("colorscheme rose-pine")
 		end,
 	})
-
+	--
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")

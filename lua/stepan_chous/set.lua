@@ -33,3 +33,6 @@ vim.g.mapleader = " "
 
 opt.splitright = true
 opt.splitbelow = true
+
+opt.signcolumn = "no"
+vim.cmd("let g:loaded_matchparen=1")
