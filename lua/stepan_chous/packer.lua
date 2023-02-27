@@ -19,7 +19,14 @@ return require("packer").startup(function(use)
 				variant = "moon",
 				disable_italics = true,
 			})
-			vim.cmd("colorscheme rose-pine")
+			-- vim.cmd("colorscheme rose-pine")
+		end,
+	})
+	use({
+		"Mofiqul/dracula.nvim",
+		as = "dracula-nvim",
+		config = function()
+			vim.cmd("colorscheme dracula")
 		end,
 	})
 	--
