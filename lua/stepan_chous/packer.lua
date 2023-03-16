@@ -72,5 +72,7 @@ return require("packer").startup(function(use)
 
 	use("m4xshen/smartcolumn.nvim")
 
+	use("p00f/nvim-ts-rainbow")
+
 	use("nvim-lualine/lualine.nvim")
 end)

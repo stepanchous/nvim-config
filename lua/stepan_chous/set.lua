@@ -36,3 +36,4 @@ opt.clipboard:append("unnamedplus")
 
 opt.signcolumn = "no"
 vim.cmd("let g:loaded_matchparen=1")
+vim.cmd("autocmd VimEnter * hi rainbowcol1 guifg=#ffffff")
