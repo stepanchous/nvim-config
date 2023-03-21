@@ -1,3 +1,3 @@
 require("smartcolumn").setup({
-	colorcolumn = 120,
+	colorcolumn = 80,
 })
