@@ -1,70 +1,41 @@
--- local saga_status, saga = pcall(require, "lspsaga")
--- if not saga_status then
--- 	return
--- end
---
--- saga.setup({
--- 	-- keybinds for navigation in lspsaga window
--- 	scroll_preview = { scroll_down = "<C-f>", scroll_up = "<C-b>" },
--- 	-- use enter to open file with definition preview
--- 	definition = {
--- 		edit = "<CR>",
--- 	},
--- 	ui = {
--- 		colors = {
--- 			normal_bg = "#022746",
--- 		},
--- 	},
--- })
---
--- local keymap = vim.keymap.set
---
--- -- LSP finder - Find the symbol's definition
--- -- If there is no definition, it will instead be hidden
--- -- When you use an action in finder like "open vsplit",
--- -- you can use <C-t> to jump back
--- keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
---
--- -- Code action
--- keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
---
--- -- Rename all occurrences of the hovered word for the entire file
--- keymap("n", "rn", "<cmd>Lspsaga rename<CR>")
---
--- -- Rename all occurrences of the hovered word for the selected files
--- keymap("n", "rn", "<cmd>Lspsaga rename ++project<CR>")
---
--- -- Peek definition
--- -- You can edit the file containing the definition in the floating window
--- -- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
--- -- It also supports tagstack
--- -- Use <C-t> to jump back
--- keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>")
---
--- keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
---
--- keymap("n", "gt", "<cmd>Lspsaga peek_type_definition<CR>")
--- keymap("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>")
---
--- keymap("n", "<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>")
---
--- keymap("n", "<leader>sc", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
---
--- keymap("n", "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>")
---
--- keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
--- keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>")
---
--- keymap("n", "[E", function()
--- 	require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
--- end)
--- keymap("n", "]E", function()
--- 	require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
--- end)
---
--- keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
---
--- keymap("n", "K", "<cmd>Lspsaga hover_doc ++keep<CR>")
--- keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
--- keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
--- keymap({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
+local saga_status, saga = pcall(require, "lspsaga")
+if not saga_status then
+	return
+end
+
+saga.setup({
+	-- keybinds for navigation in lspsaga window
+	scroll_preview = { scroll_down = "<C-f>", scroll_up = "<C-b>" },
+	-- use enter to open file with definition preview
+	definition = {
+		edit = "<CR>",
+	},
+	ui = {
+		colors = {
+			normal_bg = "#022746",
+		},
+	},
+
+	diagnostic = {
+		on_insert = false,
+		show_virt_line = false,
+	},
+})
+
+local keymap = vim.keymap
+
+local opts = { noremap = true, silent = true, buffer = bufnr }
+
+-- set keybinds
+keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts) -- show definition, references
+keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- got to declaration
+keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
+keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- go to implementation
+keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
+keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
+keymap.set("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts) -- show  diagnostics for line
+keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostics for cursor
+keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
+keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
+keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
+keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
