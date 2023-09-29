@@ -60,7 +60,7 @@ vim.keymap.set("n", "<leader>tp", ":tabp<CR>")
 
 vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>")
 
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
 vim.keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")

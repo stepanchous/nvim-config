@@ -35,3 +35,10 @@ opt.splitbelow = true
 opt.clipboard:append("unnamedplus")
 
 opt.signcolumn = "yes"
+opt.showmode = false
+
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		vim.schedule(ConfigureLualine)
+	end,
+})
