@@ -47,4 +47,7 @@ null_ls.setup({
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.offsetEncoding = { "utf-16" }
-require("lspconfig").clangd.setup({ capabilities = capabilities })
+require("lspconfig").clangd.setup({
+	capabilities = capabilities,
+	filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
+})

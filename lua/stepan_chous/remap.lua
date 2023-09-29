@@ -41,8 +41,9 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>cc", "<cmd>!clang++ -Wall -Wextra % -o %:r.out -std=c++20 -g<CR>")
 vim.keymap.set("n", "<leader>rp", "<cmd>!./%:r.out<CR>")
 
-vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gf", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>ul", "<cmd>!bear -- clang++ -Wall -Wextra *.cpp -o main.out -std=c++17<CR>")
 
@@ -71,3 +72,5 @@ vim.keymap.set("n", "<leader>cd", "<cmd>cd %:p:h<CR>")
 
 vim.keymap.set("n", "<leader>o", "o<Esc>0")
 vim.keymap.set("n", "<leader>O", "O<Esc>0")
+
+vim.keymap.set("n", "<leader>gr", "<cmd>lua require('nice-reference').references()<CR>")

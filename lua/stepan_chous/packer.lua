@@ -18,7 +18,7 @@ return require("packer").startup(function(use)
 			vim.cmd("colorscheme dracula")
 		end,
 	})
-	--
+
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")
@@ -71,7 +71,18 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use("m4xshen/smartcolumn.nvim")
+	use({
+		"wiliamks/nice-reference.nvim",
+		requires = {
+			"kyazdani42/nvim-web-devicons", --optional
+			{
+				"rmagatti/goto-preview",
+				config = function()
+					require("goto-preview").setup({})
+				end,
+			}, --optional
+		},
+	})
 
 	use("p00f/nvim-ts-rainbow")
 
