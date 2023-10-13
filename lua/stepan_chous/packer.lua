@@ -11,13 +11,7 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
-	use({
-		"Mofiqul/dracula.nvim",
-		as = "dracula-nvim",
-		config = function()
-			vim.cmd("colorscheme dracula")
-		end,
-	})
+	use("rebelot/kanagawa.nvim")
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("mbbill/undotree")
@@ -47,9 +41,6 @@ return require("packer").startup(function(use)
 	use("onsails/lspkind.nvim")
 	use("glepnir/lspsaga.nvim")
 
-	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
-	use("jayp0521/mason-null-ls.nvim")
-
 	use("christoomey/vim-tmux-navigator")
 	use("szw/vim-maximizer")
 
@@ -57,7 +48,6 @@ return require("packer").startup(function(use)
 	use("vim-scripts/ReplaceWithRegister")
 	use("numToStr/Comment.nvim")
 
-	use("nvim-tree/nvim-tree.lua")
 	use("kyazdani42/nvim-web-devicons")
 
 	use("windwp/nvim-autopairs")
@@ -72,19 +62,15 @@ return require("packer").startup(function(use)
 	})
 
 	use({
-		"wiliamks/nice-reference.nvim",
-		requires = {
-			"kyazdani42/nvim-web-devicons", --optional
-			{
-				"rmagatti/goto-preview",
-				config = function()
-					require("goto-preview").setup({})
-				end,
-			}, --optional
-		},
+		"orfosys/nvim-minimaline",
+		requires = "nvim-tree/nvim-web-devicons",
 	})
 
-	use("p00f/nvim-ts-rainbow")
+	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
 
-	use("nvim-lualine/lualine.nvim")
+	use("xiyaowong/transparent.nvim")
+
+	use("nvim-tree/nvim-tree.lua")
+
+	use({ "nvimdev/guard.nvim", requires = "nvimdev/guard-collection" })
 end)

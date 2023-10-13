@@ -33,5 +33,14 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.clipboard:append("unnamedplus")
+opt.showmode = false
 
-opt.signcolumn = "yes"
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		vim.schedule(function()
+			vim.cmd("TransparentEnable")
+			ColorMyPencils()
+			SetDiagnosticSigns()
+		end)
+	end,
+})

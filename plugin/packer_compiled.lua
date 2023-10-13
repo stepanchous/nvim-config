@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/ReplaceWithRegister",
     url = "https://github.com/vim-scripts/ReplaceWithRegister"
   },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -114,12 +119,6 @@ _G.packer_plugins = {
     path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["dracula-nvim"] = {
-    config = { "\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme dracula\bcmd\bvim\0" },
-    loaded = true,
-    path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/dracula-nvim",
-    url = "https://github.com/Mofiqul/dracula.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -130,11 +129,20 @@ _G.packer_plugins = {
     path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  ["goto-preview"] = {
-    config = { "\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17goto-preview\frequire\0" },
+  ["guard-collection"] = {
     loaded = true,
-    path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/goto-preview",
-    url = "https://github.com/rmagatti/goto-preview"
+    path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/guard-collection",
+    url = "https://github.com/nvimdev/guard-collection"
+  },
+  ["guard.nvim"] = {
+    loaded = true,
+    path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/guard.nvim",
+    url = "https://github.com/nvimdev/guard.nvim"
+  },
+  ["kanagawa.nvim"] = {
+    loaded = true,
+    path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
+    url = "https://github.com/rebelot/kanagawa.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -151,35 +159,15 @@ _G.packer_plugins = {
     path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
     url = "https://github.com/glepnir/lspsaga.nvim"
   },
-  ["lualine.nvim"] = {
-    loaded = true,
-    path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
-  ["mason-null-ls.nvim"] = {
-    loaded = true,
-    path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/mason-null-ls.nvim",
-    url = "https://github.com/jayp0521/mason-null-ls.nvim"
-  },
   ["mason.nvim"] = {
     loaded = true,
     path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["nice-reference.nvim"] = {
-    loaded = true,
-    path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/nice-reference.nvim",
-    url = "https://github.com/wiliamks/nice-reference.nvim"
-  },
-  ["null-ls.nvim"] = {
-    loaded = true,
-    path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -196,6 +184,11 @@ _G.packer_plugins = {
     path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-minimaline"] = {
+    loaded = true,
+    path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/nvim-minimaline",
+    url = "https://github.com/orfosys/nvim-minimaline"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -205,11 +198,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
-  },
-  ["nvim-ts-rainbow"] = {
-    loaded = true,
-    path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
-    url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -235,6 +223,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["transparent.nvim"] = {
+    loaded = true,
+    path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/transparent.nvim",
+    url = "https://github.com/xiyaowong/transparent.nvim"
   },
   ["trouble.nvim"] = {
     config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\ftrouble\frequire\0" },
@@ -274,14 +267,6 @@ time([[Defining packer_plugins]], false)
 time([[Config for trouble.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
 time([[Config for trouble.nvim]], false)
--- Config for: dracula-nvim
-time([[Config for dracula-nvim]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\24colorscheme dracula\bcmd\bvim\0", "config", "dracula-nvim")
-time([[Config for dracula-nvim]], false)
--- Config for: goto-preview
-time([[Config for goto-preview]], true)
-try_loadstring("\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17goto-preview\frequire\0", "config", "goto-preview")
-time([[Config for goto-preview]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>er", vim.cmd.TroubleToggle)
+vim.keymap.set("n", "<leader>t", vim.cmd.TroubleToggle)
 
 vim.keymap.set("n", "x", '"_x')
 
@@ -72,5 +72,3 @@ vim.keymap.set("n", "<leader>cd", "<cmd>cd %:p:h<CR>")
 
 vim.keymap.set("n", "<leader>o", "o<Esc>0")
 vim.keymap.set("n", "<leader>O", "O<Esc>0")
-
-vim.keymap.set("n", "<leader>gr", "<cmd>lua require('nice-reference').references()<CR>")

@@ -58,22 +58,4 @@ local on_attach = function(client, bufnr)
 	keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 end
 
-local signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = " " }
-for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
-
-require("mason-null-ls").setup({
-	-- list of formatters & linters for mason to install
-	ensure_installed = {
-		"prettier", -- ts/js formatter
-		"stylua", -- lua formatter
-		"eslint_d", -- ts/js linter
-		"clang-format",
-	},
-	-- auto-install configured formatters & linters (with null-ls)
-	automatic_installation = true,
-})
-
 lsp.setup()
