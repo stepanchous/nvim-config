@@ -1,10 +1,10 @@
 local ft = require("guard.filetype")
 
-ft("c"):fmt("clang-format"):lint("clang-tidy")
-ft("cpp"):fmt("clang-format"):lint("clang-tidy")
-ft("h"):fmt("clang-format"):lint("clang-tidy")
-ft("hpp"):fmt("clang-format"):lint("clang-tidy")
-ft("cc"):fmt("clang-format"):lint("clang-tidy")
+ft("c"):fmt("clang-format")
+ft("cpp"):fmt("clang-format")
+ft("h"):fmt("clang-format")
+ft("hpp"):fmt("clang-format")
+ft("cc"):fmt("clang-format")
 
 ft("lua"):fmt("stylua")
 
