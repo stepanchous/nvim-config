@@ -32,7 +32,6 @@ vim.g.mapleader = " "
 opt.splitright = true
 opt.splitbelow = true
 
-opt.clipboard:append("unnamedplus")
 opt.showmode = false
 
 vim.api.nvim_create_autocmd("VimEnter", {
