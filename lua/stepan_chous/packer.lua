@@ -73,4 +73,13 @@ return require("packer").startup(function(use)
 	use("nvim-tree/nvim-tree.lua")
 
 	use({ "nvimdev/guard.nvim", requires = "nvimdev/guard-collection" })
+
+	use({
+		"stevearc/aerial.nvim",
+		config = function()
+			require("aerial").setup()
+		end,
+	})
+
+	use("nvim-lualine/lualine.nvim")
 end)
