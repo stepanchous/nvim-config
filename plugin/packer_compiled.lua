@@ -180,6 +180,11 @@ _G.packer_plugins = {
     path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["monokai-pro.nvim"] = {
+    loaded = true,
+    path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/monokai-pro.nvim",
+    url = "https://github.com/loctvl842/monokai-pro.nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/stepan_chous/.local/share/nvim/site/pack/packer/start/nvim-autopairs",

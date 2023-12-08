@@ -12,6 +12,7 @@ return require("packer").startup(function(use)
 	})
 
 	use("rebelot/kanagawa.nvim")
+	use("loctvl842/monokai-pro.nvim")
 
 	use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 	use("mbbill/undotree")
