@@ -1,4 +1,6 @@
-require("transparent").setup({
+local tr = require("transparent")
+
+tr.setup({
 	lazy = false,
 	opts = {
 		-- table: default groups
@@ -33,6 +35,7 @@ require("transparent").setup({
 			"NvimTreeNormalNC",
 			"NvimTreeNormalFloat",
 			"NvimTreeEndOfBuffer",
+			"CursorLineNr",
 		},
 		-- table: groups you don't want to clear
 		exclude_groups = {},
@@ -42,6 +45,8 @@ require("transparent").setup({
 	},
 })
 
-require("transparent").clear_prefix("BufferLine")
-require("transparent").clear_prefix("NeoTree")
--- require("transparent").clear_prefix("lualine")
+tr.clear_prefix("BufferLine")
+tr.clear_prefix("NvimTree")
+tr.clear_prefix("Lualine")
+tr.clear_prefix("GitSigns")
+tr.clear_prefix("DiagnosticSign")

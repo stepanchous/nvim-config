@@ -35,4 +35,10 @@ cmp.setup({
 			ellipsis_char = "...",
 		}),
 	},
+	window = {
+		completion = {
+			border = "rounded",
+		},
+		documentation = { border = "rounded" },
+	},
 })

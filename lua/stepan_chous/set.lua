@@ -3,9 +3,9 @@ local opt = vim.opt
 opt.nu = true
 opt.relativenumber = true
 
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
 opt.backspace = "indent,eol,start"
@@ -32,13 +32,17 @@ vim.g.mapleader = " "
 opt.splitright = true
 opt.splitbelow = true
 
-opt.clipboard:append("unnamedplus")
+opt.showmode = false
 
 opt.signcolumn = "yes"
 opt.showmode = false
 
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
-		vim.schedule(ConfigureLualine)
+		vim.schedule(function()
+			vim.cmd("TransparentEnable")
+			ColorMyPencils()
+			SetDiagnosticSigns()
+		end)
 	end,
 })
