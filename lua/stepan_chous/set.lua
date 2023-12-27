@@ -20,6 +20,10 @@ opt.wrap = false
 
 opt.hlsearch = false
 opt.incsearch = true
+opt.ignorecase = true
+opt.smartcase = true
+
+opt.clipboard = "unnamedplus"
 
 opt.scrolloff = 8
 opt.signcolumn = "yes"

@@ -74,12 +74,7 @@ return require("packer").startup(function(use)
 
 	use({ "nvimdev/guard.nvim", requires = "nvimdev/guard-collection" })
 
-	use({
-		"stevearc/aerial.nvim",
-		config = function()
-			require("aerial").setup()
-		end,
-	})
+	use("simrat39/symbols-outline.nvim")
 
 	use("nvim-lualine/lualine.nvim")
 end)

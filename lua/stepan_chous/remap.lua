@@ -72,3 +72,5 @@ vim.keymap.set("n", "<leader>cd", "<cmd>cd %:p:h<CR>")
 
 vim.keymap.set("n", "<leader>o", "o<Esc>0")
 vim.keymap.set("n", "<leader>O", "O<Esc>0")
+
+vim.keymap.set("n", "<leader>a", "<cmd>SymbolsOutline<cr>")
