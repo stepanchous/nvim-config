@@ -9,10 +9,13 @@ return {
 	config = function()
 		local lspconfig = require("lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
 		local keymap = vim.keymap
-
 		local opts = { noremap = true, silent = true }
+
+		vim.diagnostic.config({
+			virtual_text = false,
+		})
+
 		local on_attach = function(_, bufnr)
 			opts.buffer = bufnr
 
