@@ -3,9 +3,9 @@ local opt = vim.opt
 opt.nu = true
 opt.relativenumber = true
 
-opt.tabstop = 2
-opt.softtabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
 opt.backspace = "indent,eol,start"
@@ -14,7 +14,6 @@ opt.smartindent = true
 
 opt.swapfile = false
 opt.backup = false
-opt.undodir = os.getenv("HOME") .. "/.config/nvim/.undodir"
 opt.undofile = true
 opt.wrap = false
 

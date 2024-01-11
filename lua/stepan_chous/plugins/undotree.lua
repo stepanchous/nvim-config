@@ -1,11 +1,12 @@
 return {
-  "mbbill/undotree",
+	"mbbill/undotree",
+	lazy = false,
 
-  init = function()
-    vim.opt.undodir = os.getenv("HOME") .. "/.local/share/nvim/.undodir"
-  end,
+	init = function()
+		vim.opt.undodir = os.getenv("HOME") .. "/.local/share/nvim/.undodir"
+	end,
 
-  keys = {
-    {"<leader>ut", "<cmd>UndotreeToggle<cr>", desc = "Undotree"}
-  }
+	keys = {
+		{ "<leader>ut", "<cmd>UndotreeToggle<cr>", desc = "Undotree" },
+	},
 }
