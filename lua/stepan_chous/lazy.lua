@@ -5,11 +5,22 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
+    "--branch=stable", -- latest stable release
     lazypath,
   })
 end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({})
+require("lazy").setup({ { import = "stepan_chous.plugins" }, { import = "stepan_chous.plugins.lsp" } }, {
+  install = {
+    colorscheme = { "kanagawa" },
+  },
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  change_detection = {
+    notify = false,
+  },
+})
