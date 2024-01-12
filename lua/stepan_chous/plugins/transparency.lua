@@ -38,6 +38,8 @@ return {
 				"NvimTreeNormalFloat",
 				"NvimTreeEndOfBuffer",
 				"CursorLineNr",
+				"FloatBorder",
+				"Pmenu",
 			},
 			exclude_groups = {},
 		})
@@ -48,4 +50,5 @@ return {
 		transparency.clear_prefix("GitSigns")
 		transparency.clear_prefix("DiagnosticSign")
 	end,
+	enabled = true,
 }
