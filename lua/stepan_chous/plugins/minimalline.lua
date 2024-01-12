@@ -4,7 +4,7 @@ return {
 	lazy = false,
 	config = function()
 		require("minimaline").setup({
-			disabled_filetypes = { "NvimTree*" },
+			disabled_filetypes = { "NvimTree*", "OUTLINE" },
 			lsp_colors_enabled = false,
 		})
 	end,
