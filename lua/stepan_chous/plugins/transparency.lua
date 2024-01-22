@@ -50,5 +50,6 @@ return {
 		transparency.clear_prefix("GitSigns")
 		transparency.clear_prefix("DiagnosticSign")
 	end,
+
 	enabled = true,
 }
