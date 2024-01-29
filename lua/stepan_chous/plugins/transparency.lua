@@ -40,10 +40,13 @@ return {
 				"CursorLineNr",
 				"FloatBorder",
 				"Pmenu",
+				"LazyNormal",
+				"TelescopeNormal",
 			},
 			exclude_groups = {},
 		})
 
+		transparency.clear_prefix("BufferLineDevIcon")
 		transparency.clear_prefix("BufferLine")
 		transparency.clear_prefix("NvimTree")
 		transparency.clear_prefix("Lualine")

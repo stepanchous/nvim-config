@@ -40,7 +40,7 @@ return {
 			vim.cmd("colorscheme gruvbox-material")
 		end,
 
-		enabled = true,
+		enabled = false,
 	},
 
 	{
@@ -51,16 +51,29 @@ return {
 		config = function()
 			local monokai = require("monokai-pro")
 			monokai.setup({
-				transparent_background = false,
+				styles = {
+					comment = { italic = true },
+					keyword = { italic = false },
+					type = { italic = false },
+					storageclass = { italic = false }, -- static, register, volatile, etc
+					structure = { italic = false }, -- struct, union, enum, etc
+					parameter = { italic = false }, -- parameter pass in function
+					annotation = { italic = true },
+					tag_attribute = { italic = true }, -- attribute of tag in reactjs
+				},
+				transparent_background = true,
 				devicons = true,
-				filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
+				filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum
 				day_night = {
 					enable = false,
 					day_filter = "classic",
 					night_filter = "octagon",
 				},
 				inc_search = "background", -- underline | background
-				background_clear = {},
+				background_clear = {
+					"float_win",
+					"telescope",
+				},
 				plugins = {
 					bufferline = {
 						underline_selected = true,
@@ -72,23 +85,10 @@ return {
 						context_start_underline = true,
 					},
 				},
-				override = function(c)
-					return {
-						ColorColumn = { bg = c.base.dimmed3 },
-						-- Mine
-						DashboardRecent = { fg = c.base.magenta },
-						DashboardProject = { fg = c.base.blue },
-						DashboardConfiguration = { fg = c.base.white },
-						DashboardSession = { fg = c.base.green },
-						DashboardLazy = { fg = c.base.cyan },
-						DashboardServer = { fg = c.base.yellow },
-						DashboardQuit = { fg = c.base.red },
-					}
-				end,
 			})
 			monokai.load()
 		end,
 
-		enabled = false,
+		enabled = true,
 	},
 }
