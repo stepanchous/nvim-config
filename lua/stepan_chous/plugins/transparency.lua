@@ -52,6 +52,7 @@ return {
 		transparency.clear_prefix("Lualine")
 		transparency.clear_prefix("GitSigns")
 		transparency.clear_prefix("DiagnosticSign")
+		transparency.clear_prefix("TabLine")
 	end,
 
 	enabled = true,
