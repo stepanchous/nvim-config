@@ -25,7 +25,7 @@ return {
 			vim.cmd("colorscheme kanagawa")
 		end,
 
-		enabled = false,
+		enabled = true,
 	},
 
 	{
@@ -89,6 +89,6 @@ return {
 			monokai.load()
 		end,
 
-		enabled = true,
+		enabled = false,
 	},
 }

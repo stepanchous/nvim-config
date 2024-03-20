@@ -23,7 +23,7 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 vim.keymap.set("n", "<leader>cc", "<cmd>!clang++ -Wall -Wextra % -o %:r.out -std=c++20 -g<CR>")
-vim.keymap.set("n", "<leader>rp", "<cmd>!./%:r.out<CR>")
+vim.keymap.set("n", "<leader>rp", "<cmd>!%:r.out<CR>")
 
 vim.keymap.set("n", "<leader>sv", "<C-w>v")
 vim.keymap.set("n", "<leader>sh", "<C-w>s")
