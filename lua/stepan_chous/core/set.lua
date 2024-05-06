@@ -35,7 +35,7 @@ opt.showmode = false
 
 opt.updatetime = 50
 
-opt.termguicolors = true
+vim.o.termguicolors = true
 
 vim.g.mapleader = " "
 vim.g.loaded_netrw = 1
