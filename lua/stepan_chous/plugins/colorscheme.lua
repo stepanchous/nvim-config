@@ -25,7 +25,7 @@ return {
 			vim.cmd("colorscheme kanagawa")
 		end,
 
-		enabled = true,
+		enabled = false,
 	},
 
 	{
@@ -90,5 +90,21 @@ return {
 		end,
 
 		enabled = false,
+	},
+
+	{
+		"sainnhe/sonokai",
+
+		lazy = false,
+		priority = 1000,
+
+		config = function()
+			vim.cmd("let g:sonokai_style = 'shusia'")
+			vim.cmd("let g:sonokai_better_performance = 1")
+			vim.cmd("let g:sonokai_transparent_background = 2")
+			vim.cmd("colorscheme sonokai")
+		end,
+
+		enabled = true,
 	},
 }
